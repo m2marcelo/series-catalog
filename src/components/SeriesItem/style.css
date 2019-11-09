@@ -1,0 +1,18 @@
+.series {
+    width: 220px;
+  }
+
+.series-top {
+    position: relative;
+    left: 35px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+.series-cover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background: #eee;
+    width: 199px;
+    height: 298px;
+  }
