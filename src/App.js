@@ -3,11 +3,18 @@ import * as SeriesAPI from './utils/SeriesAPI'
 
 
 export default class App extends Component {
-  componentDidMount() {
-    SeriesAPI.getSeries()
-    .then((series) => {
+  fillContent = () => {
+    let series = []
+    SeriesAPI.getData()
+    .then((data) => {
+      console.log('data = ', data);
+      series = SeriesAPI.getSeries(data)
       console.log('Series = ', series);
     })
+  };
+
+  componentDidMount() {
+    this.fillContent();
   };
 
   render() {
