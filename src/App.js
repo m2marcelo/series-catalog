@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as SeriesAPI from './utils/SeriesAPI'
 import SeriesItem from './components/SeriesItem/seriesItem'
+import SeriesDetails from './components/SeriesDetails/seriesDetails'
 
 export default class App extends Component {
 
@@ -30,8 +31,10 @@ export default class App extends Component {
           <p>
             Initial code
           </p>
-          {series.length > 0 && <SeriesItem series={series}/>}
+          {series.length > 0 && <SeriesDetails seriesDetails={series[0]}/>}
       </div>
     );
   }
 }
+
+// {series.length > 0 && <SeriesDetails seriesDetails={series[0]}/>}

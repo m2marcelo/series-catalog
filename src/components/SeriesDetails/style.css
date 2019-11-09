@@ -1,0 +1,69 @@
+.series-details {
+    width: 1030px;
+    padding-bottom: 35px;
+    border-radius: 9px;
+    background: rgb(211,222,231);
+background: linear-gradient(180deg, rgba(211,222,231,1) 0%, rgba(238,242,243,1) 100%);
+  }
+
+.series-details-top {
+    position: relative;
+    left: 35px;
+    top: 35px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+.series-landscape {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background: #eee;
+    width: 960px;
+    height: 540px;
+  }
+
+.series-title {
+  margin-top: 70px;
+  margin-bottom: auto;
+  margin-left: 35px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.series-time {
+    margin-top: 10px;
+    margin-left: 35px;
+    font-size: 18px;
+  }
+
+.series-year{
+    margin-left: 5px;
+    font-size: 30px;
+    font-weight: normal;
+  }
+
+.series-parental{
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.series-synopsis {
+    margin-top: 10px;
+    margin-left: 35px;
+    font-size: 18px;
+    width: 960px;
+  }
+
+  .series-title-item {
+    margin-top: 10px;
+    margin-left: 35px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .series-answer-item {
+    margin-top: 10px;
+    margin-left: 35px;
+    font-size: 18px;
+    width: 960px;
+  }
