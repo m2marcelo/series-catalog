@@ -1,19 +1,14 @@
 import React, { Component } from "react";
+import * as SeriesAPI from './utils/SeriesAPI'
+
 
 export default class App extends Component {
   componentDidMount() {
-    fetch('serier/samtliga', {
-      method: "GET",
-      headers: {
-          "Accept": "application/json",
-          "Access-Control-Allow-Origin": '*'
-      }
+    SeriesAPI.getSeries()
+    .then((series) => {
+      console.log('Series = ', series);
     })
-    .then(async function(response) {
-      console.log('Teste');
-      console.log(await response.json());
-    })
-  }
+  };
 
   render() {
     return (
