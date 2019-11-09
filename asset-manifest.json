@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.34de6062.chunk.css",
-    "main.js": "/static/js/main.2a23b7dd.chunk.js",
-    "main.js.map": "/static/js/main.2a23b7dd.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4ab8c5ed.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4ab8c5ed.js.map",
-    "static/js/2.c2c12e7a.chunk.js": "/static/js/2.c2c12e7a.chunk.js",
-    "static/js/2.c2c12e7a.chunk.js.map": "/static/js/2.c2c12e7a.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.49a090a08c8f12e4f2fb46ab9990b69b.js": "/precache-manifest.49a090a08c8f12e4f2fb46ab9990b69b.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.34de6062.chunk.css.map": "/static/css/main.34de6062.chunk.css.map"
+    "main.css": "/serier/samtliga/static/css/main.34de6062.chunk.css",
+    "main.js": "/serier/samtliga/static/js/main.f3dd0d9a.chunk.js",
+    "main.js.map": "/serier/samtliga/static/js/main.f3dd0d9a.chunk.js.map",
+    "runtime-main.js": "/serier/samtliga/static/js/runtime-main.e71d2d30.js",
+    "runtime-main.js.map": "/serier/samtliga/static/js/runtime-main.e71d2d30.js.map",
+    "static/js/2.c2c12e7a.chunk.js": "/serier/samtliga/static/js/2.c2c12e7a.chunk.js",
+    "static/js/2.c2c12e7a.chunk.js.map": "/serier/samtliga/static/js/2.c2c12e7a.chunk.js.map",
+    "index.html": "/serier/samtliga/index.html",
+    "precache-manifest.6f998ad5aa33b286abb02c7f8759829c.js": "/serier/samtliga/precache-manifest.6f998ad5aa33b286abb02c7f8759829c.js",
+    "service-worker.js": "/serier/samtliga/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/serier/samtliga/static/css/main.34de6062.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.4ab8c5ed.js",
+    "static/js/runtime-main.e71d2d30.js",
     "static/js/2.c2c12e7a.chunk.js",
     "static/css/main.34de6062.chunk.css",
-    "static/js/main.2a23b7dd.chunk.js"
+    "static/js/main.f3dd0d9a.chunk.js"
   ]
 }
