@@ -1,13 +1,27 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import * as SeriesParser from '../../utils/SeriesParser'
 import * as strings from '../../utils/constants'
 import './style.css'
 
-
 class SeriesDetails extends Component {
+
+  static propTypes = {
+    series: PropTypes.object,
+  }
+    
   render() {
-    const { location } = this.props
-    const seriesDetails = location.seriesDetails.series;
+    console.log('this.props = ', this.props)
+    let serie = this.props //check if it cames from keyboard
+    console.log('serie = ', serie.seriesDetails)
+
+    let seriesDetails = serie.seriesDetails;
+
+    if(undefined === seriesDetails) {
+        //if it cames from clicking
+        const { location } = this.props;
+        seriesDetails = location.seriesDetails.series;
+    }
 
     let thumbStyle = {}
     let title = ''

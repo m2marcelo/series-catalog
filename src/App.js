@@ -28,11 +28,6 @@ export default class App extends Component {
 
   render() {
     const { series } = this.state
-    let logoImage = {}
-
-    logoImage = {
-      backgroundImage: 'url(' + 'https://assets.viaplay.tv/frontend-2017080106/images/header-logo-large.png' + ')',
-  };
 
     return (
       <div>

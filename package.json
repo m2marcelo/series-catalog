@@ -8,6 +8,7 @@
     "morgan": "^1.9.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-keyboard-event-handler": "^1.5.1",
     "react-multi-carousel": "^2.4.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import * as SeriesParser from '../../utils/SeriesParser'
 import './style.css'
+import KeyboardEventHandler from 'react-keyboard-event-handler';
+import SeriesDetails from '../SeriesDetails/seriesDetails';
 
 
 class SeriesItem extends Component {
@@ -10,8 +12,19 @@ class SeriesItem extends Component {
     series: PropTypes.object,
   }
 
+  state = {
+    enterPressed: false,
+  }
+
+  navigateToDetails = () => {
+    this.setState({ enterPressed: true })
+  }
+
+  
+
   render() {
     const { series } = this.props
+    const isEnterPressed = this.state.enterPressed;
 
     let thumbStyle = {}
 
@@ -24,16 +37,25 @@ class SeriesItem extends Component {
     return (
       <div className="series">
         <div className="series-top">
-            {series &&
-                <Link 
-                    to={{
-                        pathname: '/details',
-                        seriesDetails: { series }
-                    }}
-                    className='series-cover'
-                    style={thumbStyle}
-                /> 
-            }
+            {<KeyboardEventHandler
+                    handleKeys={['enter']}
+                    onKeyEvent={(key, e) => this.navigateToDetails()}
+            />}
+            {isEnterPressed ? (
+                <SeriesDetails seriesDetails={series} />
+            ) : (
+                series &&
+                    <Link 
+                        to={{
+                            pathname: '/details',
+                            seriesDetails: { series }
+                        }}
+                        className='series-cover'
+                        style={thumbStyle}
+                    />
+            )}
+            
+            
         </div>
       </div>
     )
@@ -41,3 +63,8 @@ class SeriesItem extends Component {
 }
 
 export default SeriesItem
+
+  // let history = useHistory();
+    // history.push("/details");
+
+    // this.props.history.push('/details')
