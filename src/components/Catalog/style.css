@@ -1,3 +1,9 @@
-.arrows-position {
-    padding-left: 300px;
+.area {
+    height: auto;
+  }
+
+
+  .react-multi-carousel-list {
+    padding-top: 150px;
+    padding-bottom: 150px;
   }

@@ -1,0 +1,30 @@
+.header {
+    background: #0f161a;
+    border-top: 1px solid #0f161a;
+    height: 66px;
+    position: relative;
+}
+
+.footer {
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    width: 100%;
+    background: #0f161a;
+    border-top: 1px solid #0f161a;
+    height: 66px;
+}
+
+.logo {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    cursor: pointer;
+    display: block;
+}
+
+.carousel {
+    margin: auto;
+    background: rgb(211,222,231);
+    background: linear-gradient(180deg, rgba(211,222,231,1) 0%, rgba(238,242,243,1) 100%);
+}

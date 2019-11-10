@@ -18,43 +18,45 @@ class Catalog extends Component {
     const { series } = this.props
 
     return (
-        <Carousel
-        additionalTransfrom={0}
-        arrows
-        autoPlaySpeed={3000}
-        centerMode={false}
-        className=""
-        containerClass="container-with-dots"
-        dotListClass=""
-        draggable
-        focusOnSelect={false}
-        infinite
-        itemClass=""
-        keyBoardControl
-        minimumTouchDrag={80}
-        renderButtonGroupOutside={true}
-        renderDotsOutside={true}
-        responsive={{
-          desktop: {
-            breakpoint: {
-              max: 3000,
-              min: 1024
+        <div className="area">
+            <Carousel
+            additionalTransfrom={0}
+            arrows
+            autoPlaySpeed={3000}
+            centerMode={false}
+            className=""
+            containerClass="container-with-dots"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            renderButtonGroupOutside={true}
+            renderDotsOutside={true}
+            responsive={{
+            desktop: {
+                breakpoint: {
+                max: 3000,
+                min: 1024
+                },
+                items: 5,
+                partialVisibilityGutter: 40
             },
-            items: 5,
-            partialVisibilityGutter: 40
-          },
-        }}
-        showDots={false}
-        sliderClass=""
-        slidesToSlide={1}
-        swipeable
-      >
-            {series.length !== 0 && series.map((serie) => (
-                <div  key={SeriesParser.getPublicPath(serie)} >
-                    <SeriesItem series={serie} />
-                </div>
-            ))}
-      </Carousel>
+            }}
+            showDots={false}
+            sliderClass=""
+            slidesToSlide={1}
+            swipeable
+        >
+                {series.length !== 0 && series.map((serie) => (
+                    <div  key={SeriesParser.getPublicPath(serie)} >
+                        <SeriesItem series={serie} />
+                    </div>
+                ))}
+        </Carousel>
+      </div>
     )
   }
 }
