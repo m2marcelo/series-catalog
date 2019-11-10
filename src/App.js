@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Route } from 'react-router-dom'
+
 import * as SeriesAPI from './utils/SeriesAPI'
-import SeriesItem from './components/SeriesItem/seriesItem'
 import SeriesDetails from './components/SeriesDetails/seriesDetails'
+import Catalog from './components/Catalog/catalog'
 
 export default class App extends Component {
 
@@ -15,7 +17,6 @@ export default class App extends Component {
     .then((data) => {
       series = SeriesAPI.getSeries(data)
       this.setState({ series })
-      console.log('Series = ', series);
     })
   };
 
@@ -31,10 +32,12 @@ export default class App extends Component {
           <p>
             Initial code
           </p>
-          {series.length > 0 && <SeriesDetails seriesDetails={series[0]}/>}
+          <Route exact path='/' render={() => (
+            <Catalog series={series}/>
+          )}/>
+          <Route path='/details' component={SeriesDetails}/>
+
       </div>
     );
   }
 }
-
-// {series.length > 0 && <SeriesDetails seriesDetails={series[0]}/>}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import * as SeriesParser from '../../utils/SeriesParser'
 import './style.css'
@@ -6,7 +7,7 @@ import './style.css'
 
 class SeriesItem extends Component {
   static propTypes = {
-    series: PropTypes.array,
+    series: PropTypes.object,
   }
 
   render() {
@@ -16,15 +17,22 @@ class SeriesItem extends Component {
 
     if (series) {
         thumbStyle = {
-            backgroundImage: 'url(' + SeriesParser.getCover(series[0]) + ')',
+            backgroundImage: 'url(' + SeriesParser.getCover(series) + ')',
         };
       }
 
     return (
       <div className="series">
         <div className="series-top">
-            {series && 
-                <div className="series-cover" style={thumbStyle} />
+            {series &&
+                <Link 
+                    to={{
+                        pathname: '/details',
+                        seriesDetails: { series }
+                    }}
+                    className='series-cover'
+                    style={thumbStyle}
+                /> 
             }
         </div>
       </div>
