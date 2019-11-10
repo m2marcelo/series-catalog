@@ -27,6 +27,9 @@ export const getSynopsis = (series) =>
 
 export const getSeasons = (series) =>
    series.content.series.seasons
+
+export const getPublicPath = (series) =>
+   series.publicPath
    
 
 
