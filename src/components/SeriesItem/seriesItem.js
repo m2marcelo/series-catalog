@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import * as SeriesParser from '../../utils/SeriesParser'
 import './style.css'
 import KeyboardEventHandler from 'react-keyboard-event-handler';
-import SeriesDetails from '../SeriesDetails/seriesDetails';
 
 
 class SeriesItem extends Component {
@@ -42,7 +41,13 @@ class SeriesItem extends Component {
                     onKeyEvent={(key, e) => this.navigateToDetails()}
             />}
             {isEnterPressed ? (
-                <SeriesDetails seriesDetails={series} />
+                <Redirect to={{
+                    pathname: '/details',
+                    seriesDetails: { series }
+                }}
+                className='series-cover'
+                style={thumbStyle}
+                ></Redirect>
             ) : (
                 series &&
                     <Link 
@@ -64,7 +69,3 @@ class SeriesItem extends Component {
 
 export default SeriesItem
 
-  // let history = useHistory();
-    // history.push("/details");
-
-    // this.props.history.push('/details')

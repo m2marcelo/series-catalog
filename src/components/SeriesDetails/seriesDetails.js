@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import * as SeriesParser from '../../utils/SeriesParser'
 import * as strings from '../../utils/constants'
+import KeyboardEventHandler from 'react-keyboard-event-handler';
+import { Redirect } from 'react-router-dom'
+
 import './style.css'
 
 class SeriesDetails extends Component {
@@ -9,10 +12,20 @@ class SeriesDetails extends Component {
   static propTypes = {
     series: PropTypes.object,
   }
-    
+
+  state = {
+    backPressed: false,
+  }
+
+  navigateToHome = () => {
+    this.setState({ backPressed: true })
+  }
+
   render() {
     console.log('this.props = ', this.props)
     let serie = this.props //check if it cames from keyboard
+    const isBackPressed = this.state.backPressed;
+
     console.log('serie = ', serie.seriesDetails)
 
     let seriesDetails = serie.seriesDetails;
@@ -56,57 +69,69 @@ class SeriesDetails extends Component {
 
     return (
       <div className="series-details">
-          <div className="series-details-top">
-            {seriesDetails && 
-                <div className="series-landscape" style={thumbStyle}></div>
+          <KeyboardEventHandler
+                    handleKeys={['esc', 'b']}
+                    onKeyEvent={(key, e) => this.navigateToHome()}
+          />
+          { isBackPressed ? (
+                <Redirect to={{
+                    pathname: '/',
+                }}></Redirect>
+            ) : (
+                <div>
+                    <div className="series-details-top">
+                    {seriesDetails &&
+                        <div className="series-landscape" style={thumbStyle}></div>
+                    }
+                    </div>
+                    { title &&
+                        <p className="series-title">{title}
+                        <span className="series-year">({year})</span>
+                        </p>
+                    }
+                    { parentalRating &&
+                        <p className="series-title-item">
+                        {strings.PARENTAL_RATING}
+                        <span className="series-parental">
+                            { parentalRating }
+                            { strings.YEARS }
+                        </span>
+                        </p>
+                    }
+                    { seasons &&
+                        <p className="series-title-item">
+                        { strings.SEASONS }
+                        { seasons }
+                        <span className="series-time">{availabilityInfo}</span>
+                        </p>
+                    }
+
+                    { synopsis &&
+                        <p className="series-title-item">
+                        { strings.SYNOPSIS }
+                        </p>
+                    }
+                    <p className="series-synopsis">{synopsis}</p>
+                    { actors &&
+                        <p className="series-title-item">
+                        { strings.CASTING }
+                        </p>
+                    }
+                    <p className="series-answer-item">
+                    { actors }
+                    </p>
+                    { creators &&
+                        <p className="series-title-item">
+                        { strings.CREATORS }
+                        </p>
+                    }
+                    <p className="series-answer-item">
+                    { creators }
+                    </p>
+                </div>
+             )
             }
-            </div>
-            {title && 
-                <p className="series-title">{title}
-                <span className="series-year">({year})</span>
-                </p>
-            }
-            {parentalRating && 
-                <p className="series-title-item">
-                {strings.PARENTAL_RATING}
-                <span className="series-parental">
-                    {parentalRating}
-                    {strings.YEARS}
-                </span>
-                </p>
-            }
-            
-            {seasons && 
-                <p className="series-title-item">
-                {strings.SEASONS}
-                {seasons}
-                <span className="series-time">{availabilityInfo}</span>
-                </p>
-            }
-            
-            {synopsis && 
-                <p className="series-title-item">
-                {strings.SYNOPSIS}
-                </p>
-            }
-            <p className="series-synopsis">{synopsis}</p>
-            {actors && 
-                <p className="series-title-item">
-                {strings.CASTING}
-                </p>
-            }
-            <p className="series-answer-item">
-            {actors}
-            </p>
-            {creators && 
-                <p className="series-title-item">
-                {strings.CREATORS}
-                </p>
-            }
-            <p className="series-answer-item">
-            {creators}
-            </p> 
-      </div>
+        </div>
     )
   }
 }
