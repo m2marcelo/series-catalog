@@ -1,3 +1,6 @@
+//Exporting these functions to make the
+//code better to read
+
 export const getCover = (series) =>
    series.content.images.boxart.url
 

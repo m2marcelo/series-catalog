@@ -14,6 +14,14 @@ class Catalog extends Component {
     series: PropTypes.array,
   }
 
+  //To help in the development speed I choose to use a
+  //ready carousel instead of creating one.
+
+  //TODO-EXTRA: Fix the keyboard handler or export the current item set
+  //to be able to display the correct item in the details page
+  
+  //TODO-EXTRA: Fix the transformation when using the keyboard, if possible
+
   render() {
     const { series } = this.props
 

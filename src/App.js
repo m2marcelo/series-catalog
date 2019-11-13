@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import * as SeriesAPI from './utils/SeriesAPI'
 import SeriesDetails from './components/SeriesDetails/seriesDetails'
 import Catalog from './components/Catalog/catalog'
+import * as Strings from './utils/constants'
 import './App.css'
 
 
@@ -29,10 +30,17 @@ export default class App extends Component {
   render() {
     const { series } = this.state
 
+    //The app will support the main page and the details page,
+    //one at the time, using the route to redirect.
+
     return (
       <div>
         <div className="header">
-          <img className="logo" src="https://assets.viaplay.tv/frontend-2017080106/images/header-logo-large.png" width="144" height="35" />
+          <img className="logo" 
+            src={Strings.LOGO}
+            width={Strings.LOGO_WIDTH}
+            height={Strings.LOGO_HEIGHT}
+          />
         </div>
         <div className="carousel">
             <Route exact path='/' render={() => (

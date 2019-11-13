@@ -22,12 +22,8 @@ class SeriesDetails extends Component {
   }
 
   render() {
-    console.log('this.props = ', this.props)
     let serie = this.props //check if it cames from keyboard
     const isBackPressed = this.state.backPressed;
-
-    console.log('serie = ', serie.seriesDetails)
-
     let seriesDetails = serie.seriesDetails;
 
     if(undefined === seriesDetails) {
@@ -66,6 +62,11 @@ class SeriesDetails extends Component {
         availabilityInfo = SeriesParser.getAvailability(seriesDetails)
         seasons = SeriesParser.getSeasons(seriesDetails)
       }
+
+    // A conditional render to redirect to the main page
+    // using the keyboard or the mouse.
+
+    // Key enabled to navigate back to main page: b or ESC
 
     return (
       <div className="series-details">
