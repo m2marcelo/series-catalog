@@ -16,11 +16,18 @@ export default class App extends Component {
 
   fillContent = () => {
     let series = []
-    SeriesAPI.getData()
-    .then((data) => {
-      series = SeriesAPI.getSeries(data)
-      this.setState({ series })
-    })
+    try {
+      SeriesAPI.getData()
+      .then((data) => {
+        if (data) {
+          series = SeriesAPI.getSeries(data)
+          this.setState({ series })
+        }
+      })
+    }
+    catch (e) {
+      console.log(e.message())
+    }
   };
 
   componentDidMount() {
@@ -42,12 +49,19 @@ export default class App extends Component {
             height={Strings.LOGO_HEIGHT}
           />
         </div>
-        <div className="carousel">
-            <Route exact path='/' render={() => (
-              <Catalog series={series}/>
-            )}/>
-            <Route path='/details' component={SeriesDetails}/>
-        </div>
+        { series.length === 0 ? (
+                <div className="error">
+                  {Strings.FETCH_ERROR}
+                </div>
+            ) : (
+              <div className="carousel">
+                  <Route exact path='/' render={() => (
+                    <Catalog series={series}/>
+                  )}/>
+                  <Route path='/details' component={SeriesDetails}/>
+              </div>
+            )
+        }
         <div className="footer" />
       </div>
     );

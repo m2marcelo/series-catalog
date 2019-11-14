@@ -9,5 +9,6 @@ export const SEASONS = 'Seasons: ';
 export const LOGO = 'https://assets.viaplay.tv/frontend-2017080106/images/header-logo-large.png';
 export const LOGO_WIDTH = '144'; 
 export const LOGO_HEIGHT = '35';
+export const FETCH_ERROR = 'Something went wrong when fecthing the series...';
 
 

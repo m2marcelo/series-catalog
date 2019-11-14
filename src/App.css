@@ -28,3 +28,11 @@
     background: rgb(211,222,231);
     background: linear-gradient(180deg, rgba(211,222,231,1) 0%, rgba(238,242,243,1) 100%);
 }
+
+.error {
+  padding-top: 270px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  height: 600px;
+}

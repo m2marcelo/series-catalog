@@ -12,5 +12,11 @@ fetch('serier/samtliga', {
   }
 })
 .then(async function(res) {
+  if (!res.ok) {
+    throw Error(res.statusText);
+  }
   return await res.json();
 })
+.catch(function(error) {
+  console.log(error);
+});
