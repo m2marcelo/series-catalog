@@ -29,7 +29,9 @@ class SeriesDetails extends Component {
     if(undefined === seriesDetails) {
         //if it cames from clicking
         const { location } = this.props;
-        seriesDetails = location.seriesDetails.series;
+        // in case of loading the details page directly
+        if(location.seriesDetails)
+          seriesDetails = location.seriesDetails.series;
     }
 
     let thumbStyle = {}
@@ -112,7 +114,9 @@ class SeriesDetails extends Component {
                         { strings.SYNOPSIS }
                         </p>
                     }
-                    <p className="series-synopsis">{synopsis}</p>
+                    { synopsis &&
+                       <p className="series-synopsis">{synopsis}</p>
+                    }
                     { actors &&
                         <p className="series-title-item">
                         { strings.CASTING }
